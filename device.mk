@@ -23,6 +23,11 @@ $(call inherit-product-if-exists, vendor/samsung/kltekdi/kltekdi-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Ramdisk for FeliCa
+PRODUCT_PACKAGES += \
+    init.carrier.rc \
+    init.felica.sh
+
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
